@@ -10,6 +10,7 @@ SigmaNz = complex(zeros(length(TAxis)+1,1));
 SigmaNzm1 = complex(zeros(length(TAxis)+1,1));
 steps = length(TAxis) - 1;
 fmax = zeros(length(TAxis)+1, 1);
+jmax = zeros(length(TAxis)+1, 1);
 field = complex(zeros(length(Field),1));
 % field_p = complex(zeros(length(Field),1));
 % rfield_p = complex(zeros(length(Field),1));
@@ -97,6 +98,7 @@ OUTJ(:,jout) = cu(IZ,1);
 IDX = @(j) (j + 1);
 
 fmax(IDX(0)) = max(abs(field(:,1)));
+jmax(IDX(0)) = max(abs(cu(:,1)));
 FNz(IDX(0)) = field(end);
 FNzm1(IDX(0)) = field(end-1);
 JNz(IDX(0)) = cu(end);
@@ -106,23 +108,26 @@ SigmaNzm1(IDX(0)) = 0;
 
 WR(IDX(0)) = dz * (2.0D0/3.0D0*(2.0D0 * JNz(IDX(0)) + JNzm1(IDX(0))));
 
-% SHOW = 1;
-% if SHOW == 1
-%     [lhr, lha, hFig] = makeFig(ZAxis, TAxis);
-% end
+SHOW = 1;
+if SHOW == 1
+    [lhfmax, lhfabs, lhjmax, lhjabs, hFig] = makeFig(ZAxis, TAxis);
+end
 
 fprintf('\n');
 timerVal = tic;
 for step=1:steps
     
-%         if SHOW == 1
-%             lHandleB.YData = abs(field(:,1));
-%             lHandleJ.YData = abs(cu(:,1));
-%             lhr.YData(1:step) = fmax(1:step);
-%             lhr.XData(1:step) = TAxis(1:step);
-%             lha.YData = abs(field);
-%             drawnow
-%         end
+        if SHOW == 1           
+            lhfmax.YData(1:step) = fmax(1:step);
+            lhfmax.XData(1:step) = TAxis(1:step);
+            lhfabs.YData = abs(field);
+            
+            lhjmax.YData(1:step) = jmax(1:step);
+            lhjmax.XData(1:step) = TAxis(1:step);
+            lhjabs.YData = abs(cu);
+            
+            drawnow
+        end
     
     WR(IDX(step)) = dz * ((-1i*C0 * 2.0D0/3.0D0/dt - kpar2(end)/3.0D0) * FNz(IDX(step-1))...
         + (-1i*C0/3.0D0/dt - kpar2(end - 1)/6.0D0) * FNzm1(IDX(step-1))...
@@ -135,14 +140,14 @@ for step=1:steps
     elseif step == 2
         IR = 4.0D0/3.0D0 * SQRDT * (u(0)*(1 - SQR2D2) + u(1)*(SQR2M2 - 2.5D0));
     else
-        %         j = 1:step-2;
-        %         IR = 4.0D0/3.0D0 * SQRDT * (u(0)*((step - 1).^(1.5) - (step - 1.5)*sqrt(step))...
-        %             + sum(u(j).*((step - j - 1).^(1.5) - 2*(step - j).^(1.5) + (step - j + 1).^(1.5)))...
-        %             + u(step - 1)*(SQR2M2 - 2.5));
-        IR = 4.0D0/3.0D0 * SQRDT * (u(0)*((step - 1.0D0).^(1.5) - (step - 1.5D0)*sqrt(step)) + u(step - 1)*(SQR2M2 - 2.5D0));
-        for j = 1:step-2
-            IR = IR + 4.0D0/3.0D0 * SQRDT * (u(j).*((step - j - 1.0D0).^(1.5) - 2.0D0*(step - j).^(1.5) + (step - j + 1.0D0).^(1.5)));
-        end
+        j = 1:step-2;
+        IR = 4.0D0/3.0D0 * SQRDT * (u(0)*((step - 1).^(1.5) - (step - 1.5)*sqrt(step))...
+            + sum(u(j).*((step - j - 1).^(1.5) - 2*(step - j).^(1.5) + (step - j + 1).^(1.5)))...
+            + u(step - 1)*(SQR2M2 - 2.5));
+        %         IR = 4.0D0/3.0D0 * SQRDT * (u(0)*((step - 1.0D0).^(1.5) - (step - 1.5D0)*sqrt(step)) + u(step - 1)*(SQR2M2 - 2.5D0));
+        %         for j = 1:step-2
+        %             IR = IR + 4.0D0/3.0D0 * SQRDT * (u(j).*((step - j - 1.0D0).^(1.5) - 2.0D0*(step - j).^(1.5) + (step - j + 1.0D0).^(1.5)));
+        %         end
     end
     
     D(1) = 0;
@@ -212,6 +217,7 @@ for step=1:steps
     cu(:,1) = Ic * trapz(th0, p, 2)  / (2.0D0*pi);
     %     cu(:,1) = Ic * trpz(dz, p, Ne)  / (2*pi);
     fmax(IDX(step)) = max(abs(field(:,1)));
+    jmax(IDX(step)) = max(abs(cu(:,1)));
     
     k = step + 1;
     
