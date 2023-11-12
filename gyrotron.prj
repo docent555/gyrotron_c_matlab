@@ -1,5 +1,5 @@
 <deployment-project plugin="plugin.coder" plugin-version="R2018b">
-  <configuration build-checksum="1340843259" file="D:\Alex\Documents\MATLAB\gyrotron_c\gyrotron.prj" location="D:\Alex\Documents\MATLAB\gyrotron_c" name="gyrotron" target="target.unifiedcoder" target-name="MATLAB Coder">
+  <configuration build-checksum="3882712459" file="D:\Alex\Documents\MATLAB\gyrotron_c\gyrotron.prj" location="D:\Alex\Documents\MATLAB\gyrotron_c" name="gyrotron" target="target.unifiedcoder" target-name="MATLAB Coder">
     <profile key="profile.mex">
       <param.BuiltInstrumentedMex />
       <param.RanInstrumentedMex>false</param.RanInstrumentedMex>
@@ -828,6 +828,7 @@
     <param.WorkflowStep>workflowSummary</param.WorkflowStep>
     <param.TestSnippets>
       <item>[Bre, Bvim, Jre, Jim, ZAxis, TAxis] = gyrotron(256, 0, 3, 1, 0.3, 0, 2.077, 0.827, 1.2, 100, 0.005, 0.0025, 1e-8, 20, 20, 0,1);</item>
+      <item>[Bre, Bvim, Jre, Jim, ZAxis, TAxis] = gyrotron(256, 0, 3, 1, 0.3, 0, 2.077, 0.827, 1.2, 100, 0.005, 0.0025, 1e-8, 20, 20, 0, 1, 0.01);</item>
     </param.TestSnippets>
     <param.ExternalFcnMajority>column</param.ExternalFcnMajority>
     <param.UseGlobals>option.UseGlobals.No</param.UseGlobals>
@@ -846,7 +847,7 @@
     <param.AutoInferUnboundedSizeThreshold>2048</param.AutoInferUnboundedSizeThreshold>
     <param.EnableFixedPointStep>false</param.EnableFixedPointStep>
     <param.EnableScreener>true</param.EnableScreener>
-    <param.AnnotationChecksum>2025766199</param.AnnotationChecksum>
+    <param.AnnotationChecksum>1141680227</param.AnnotationChecksum>
     <var.LegacyTarget />
     <var.MirrorOnOpen>false</var.MirrorOnOpen>
     <param.FixedPointEnabled>false</param.FixedPointEnabled>
@@ -855,12 +856,12 @@
     <param.unifiedParamStorage />
     <var.gc.lastOutputRoot>codegen\lib\gyrotron</var.gc.lastOutputRoot>
     <var.gc.lastOutputType>STATIC_LIBRARY</var.gc.lastOutputType>
-    <var.gc.preBuildChecksum>2981313285</var.gc.preBuildChecksum>
+    <var.gc.preBuildChecksum>422961781</var.gc.preBuildChecksum>
     <var.cfi.lastOutputRoot>codegen\mex\gyrotron</var.cfi.lastOutputRoot>
     <var.cfi.preBuildChecksum>3358766027</var.cfi.preBuildChecksum>
     <var.lastCfiTestSnippet>[Bre, Bvim, Jre, Jim, ZAxis, TAxis] = gyrotron(256, 0, 3, 1, 0.3, 0, 2.077, 0.827, 1.2, 100, 0.005, 0.0025, 1e-8, 20, 20, 0,1);</var.lastCfiTestSnippet>
     <var.outdatedOnRestore>false</var.outdatedOnRestore>
-    <var.lastUserSourceChecksum>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;&lt;checksum&gt;&lt;includedFiles&gt;&lt;file&gt;D:\Alex\Documents\MATLAB\gyrotron_c\gyroscr.m&lt;/file&gt;&lt;file&gt;D:\Alex\Documents\MATLAB\gyrotron_c\gyrotron.m&lt;/file&gt;&lt;file&gt;D:\Alex\Documents\MATLAB\gyrotron_c\oscill_reim.m&lt;/file&gt;&lt;file&gt;D:\Alex\Documents\MATLAB\gyrotron_c\rhs.m&lt;/file&gt;&lt;file&gt;D:\Alex\Documents\MATLAB\gyrotron_c\rhsv.m&lt;/file&gt;&lt;file&gt;D:\Alex\Documents\MATLAB\gyrotron_c\seval.m&lt;/file&gt;&lt;file&gt;D:\Alex\Documents\MATLAB\gyrotron_c\seval_cmplx.m&lt;/file&gt;&lt;file&gt;D:\Alex\Documents\MATLAB\gyrotron_c\spline.m&lt;/file&gt;&lt;file&gt;D:\Alex\Documents\MATLAB\gyrotron_c\uval.m&lt;/file&gt;&lt;/includedFiles&gt;&lt;value&gt;4095806144&lt;/value&gt;&lt;/checksum&gt;</var.lastUserSourceChecksum>
+    <var.lastUserSourceChecksum>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;&lt;checksum&gt;&lt;includedFiles&gt;&lt;file&gt;D:\Alex\Documents\MATLAB\gyrotron_c\gyroscr.m&lt;/file&gt;&lt;file&gt;D:\Alex\Documents\MATLAB\gyrotron_c\gyrotron.m&lt;/file&gt;&lt;file&gt;D:\Alex\Documents\MATLAB\gyrotron_c\oscill_reim.m&lt;/file&gt;&lt;file&gt;D:\Alex\Documents\MATLAB\gyrotron_c\rhs.m&lt;/file&gt;&lt;file&gt;D:\Alex\Documents\MATLAB\gyrotron_c\rhsv.m&lt;/file&gt;&lt;file&gt;D:\Alex\Documents\MATLAB\gyrotron_c\seval.m&lt;/file&gt;&lt;file&gt;D:\Alex\Documents\MATLAB\gyrotron_c\seval_cmplx.m&lt;/file&gt;&lt;file&gt;D:\Alex\Documents\MATLAB\gyrotron_c\spline.m&lt;/file&gt;&lt;file&gt;D:\Alex\Documents\MATLAB\gyrotron_c\uval.m&lt;/file&gt;&lt;/includedFiles&gt;&lt;value&gt;4054650819&lt;/value&gt;&lt;/checksum&gt;</var.lastUserSourceChecksum>
     <var.sourceSetState>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;&lt;sourceModel&gt;&lt;primarySourceFiles&gt;&lt;file&gt;D:\Alex\Documents\MATLAB\gyrotron_c\gyroscr.m&lt;/file&gt;&lt;file&gt;D:\Alex\Documents\MATLAB\gyrotron_c\gyrotron.m&lt;/file&gt;&lt;file&gt;D:\Alex\Documents\MATLAB\gyrotron_c\oscill_reim.m&lt;/file&gt;&lt;file&gt;D:\Alex\Documents\MATLAB\gyrotron_c\rhs.m&lt;/file&gt;&lt;file&gt;D:\Alex\Documents\MATLAB\gyrotron_c\rhsv.m&lt;/file&gt;&lt;file&gt;D:\Alex\Documents\MATLAB\gyrotron_c\seval.m&lt;/file&gt;&lt;file&gt;D:\Alex\Documents\MATLAB\gyrotron_c\seval_cmplx.m&lt;/file&gt;&lt;file&gt;D:\Alex\Documents\MATLAB\gyrotron_c\spline.m&lt;/file&gt;&lt;file&gt;D:\Alex\Documents\MATLAB\gyrotron_c\uval.m&lt;/file&gt;&lt;/primarySourceFiles&gt;&lt;fixedPointSourceFiles/&gt;&lt;fixedPointSourceRegistered&gt;false&lt;/fixedPointSourceRegistered&gt;&lt;fixedPointSourceSelected&gt;false&lt;/fixedPointSourceSelected&gt;&lt;/sourceModel&gt;</var.sourceSetState>
     <param.forceMexBuild>false</param.forceMexBuild>
     <param.NoDefaultJIT>false</param.NoDefaultJIT>
@@ -1065,7 +1066,7 @@
     </unset>
     <fileset.entrypoints>
       <file custom-data-expanded="false" value="${PROJECT_ROOT}\gyrotron.m">
-        <Marker>1699530442263</Marker>
+        <Marker>1699706116178</Marker>
       </file>
     </fileset.entrypoints>
     <fileset.testbench />
@@ -1089,6 +1090,7 @@
           <Input Name="INTZ" typeId="0" />
           <Input Name="SPLINE" typeId="0" />
           <Input Name="DK" typeId="0" />
+          <Input Name="a0" typeId="0" />
           <idpTable>
             <type typeId="0">
               <Class>double</Class>

@@ -1,0 +1,7 @@
+Include
+d:\Alex\Documents\MATLAB\gyrotron_c\codegen\lib\gyrotron\;c:\Program Files\Polyspace\R2019b\extern\include\;d:\Alex\Documents\MATLAB\gyrotron_c\codegen\lib\gyrotron\CXSparse\Include\;d:\Alex\Documents\MATLAB\gyrotron_c\codegen\lib\gyrotron\CXSparse\SuiteSparse_config\
+
+Library directories
+d:\Alex\Documents\MATLAB\gyrotron_c\codegen\lib\gyrotron\
+
+gyrotron.lib
