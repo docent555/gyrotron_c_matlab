@@ -64,7 +64,7 @@ w_op = c * nu / R0;
 if convert == true
     ZetaEx = betta_perp2/2.0/betta_z*w_op*Lz/c;
     Ic = 16 / (17000) * (I0 * betta_z * besselj(28-1,nu*Rb/R0)^2) / ...
-        (gamma0 * betta^6 * (nu^2 - 28^2) * besselj(28, nu)^2);
+        (gamma0 * betta_perp2^3 * (nu^2 - 28^2) * besselj(28, nu)^2);
     
     TauEnd = betta_perp2^2*w_op*Tend/8/betta_z2;
     
@@ -95,7 +95,7 @@ if convert == true
             Rr(i) = uval(x(i),Rr_file(:,1),Rr_file(:,2));
         end
         Rr(:) = Rr(:)/10; % в миллиметрах
-    end  
+    end    
     
     wc = c*nu*ones(Nz,1)./Rr;    
     kpar2 = 8*betta_z2/betta_perp2^2*(1 - wc/w_op);        
@@ -172,6 +172,7 @@ fprintf(fileID,'ZetaEx = %f\n', ZetaEx);
 fprintf(fileID,'TauEnd = %f\n', TauEnd);
 fprintf(fileID,'Delta = %f\n', Delta);
 fprintf(fileID,'I0 = %f\n', I0);
+fprintf(fileID,'Ic = %f\n', Ic);
 fprintf(fileID,'R0 = %f\n', R0);
 fprintf(fileID,'Rb = %f\n', Rb);
 fprintf(fileID,'g = %f\n', g);
@@ -183,7 +184,8 @@ fprintf(fileID,'INTT = %i\n', int64(INTT));
 fprintf(fileID,'INTZ = %i\n', int64(INTZ));
 fclose(fileID);
 
-[OUTF, OUTJ, Eff, Omega, jout] = gyroscr(Nz, Nt, Ne, ZAxis, TAxis, Delta, Ic, dt, dz, tol, kpar2, INTT, INTZ, OUTNz, OUTNt, InitialField);
+[OUTF, OUTJ, Eff, Omega, jout] = gyroscr(Nz, Nt, Ne, ZAxis, TAxis, Delta, ...
+    Ic, dt, dz, tol, kpar2, INTT, INTZ, OUTNz, OUTNt, InitialField);
 
 % Folder = 'results/';
 % 
